@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.feature "Login", :js do
+RSpec.describe "Login", type: :system do
   let!(:user) { User.create!(email: "test@example.com", password: "test") }
 
   context "without a current user" do
