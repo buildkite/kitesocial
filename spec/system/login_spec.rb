@@ -1,9 +1,11 @@
 require "rails_helper"
 
 RSpec.describe "Login", type: :system do
-  let!(:user) { User.create!(email: "test@example.com", password: "test") }
-
   context "without a current user" do
+    before do
+      User.create!(name: "test", email: "test@example.com", password: "test")
+    end
+
     it "redirects from home to login" do
       visit root_path
 
@@ -38,16 +40,6 @@ RSpec.describe "Login", type: :system do
   context "with a current user" do
     before do
       login
-    end
-
-    def login
-      visit new_session_path
-
-      fill_in "email", with: "test@example.com"
-      fill_in "password", with: "test"
-      click_button "Log in"
-
-      expect(page).to have_no_button("Log in")
     end
 
     it "logs out" do

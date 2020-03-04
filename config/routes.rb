@@ -3,5 +3,8 @@ Rails.application.routes.draw do
 
   resource :session
 
+  resources :chirps
+  resources :users
+
   root "home#show"
 end

@@ -1,1 +1,8 @@
-👋
+<%= form_with model: Chirp.new do |form| %>
+  What's up? <%= form.text_field :content %>
+  <%= form.submit "Chirp!" %>
+<% end %>
+
+<hr>
+
+<%= render @timeline %>
