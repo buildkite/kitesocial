@@ -10,6 +10,7 @@
   </head>
 
   <body>
+    <h1><%= image_tag 'logo', alt: 'Kitesocial', size: '333x95' %></h1>
     <% if current_user %>
       <%= button_to "Log out", session_path, method: :delete %>
     <% end %>
