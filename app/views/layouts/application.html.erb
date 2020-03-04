@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Kitesocial</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,9 +11,12 @@
   </head>
 
   <body>
-    <% if current_user %>
-      <%= button_to "Log out", session_path, method: :delete %>
-    <% end %>
+    <header>
+      <h1><%= image_tag 'logo', alt: 'Kitesocial', style: 'max-width: 322px;width: 100%' %></h1>
+      <% if current_user %>
+        <%= button_to "Log out", session_path, method: :delete %>
+      <% end %>
+    </header>
     <%= yield %>
   </body>
 </html>
