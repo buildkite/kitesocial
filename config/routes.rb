@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   resource :session
 
   resources :chirps
-  resources :users
+  resources :users do
+    resource :follow
+  end
 
-  root "home#show"
+  get "/firehose", to: "home#firehose"
+
+  root "home#timeline"
 end

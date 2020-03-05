@@ -4,6 +4,8 @@
   <%= form.submit "Chirp!" %>
 <% end %>
 
+<p><%= link_to("See what everyone's saying", firehose_path) %></p>
+
 <h2>Timeline</h2>
 
 <%= render @timeline %>

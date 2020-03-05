@@ -12,7 +12,7 @@
 
   <body>
     <header>
-      <h1><%= image_tag 'logo', alt: 'Kitesocial', style: 'max-width: 322px;width: 100%' %></h1>
+      <h1><%= link_to(root_path) { image_tag('logo', alt: 'Kitesocial', style: 'max-width: 322px;width: 100%') } %></h1>
       <% if current_user %>
         <%= button_to "Log out", session_path, method: :delete %>
       <% end %>
