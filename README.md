@@ -9,7 +9,7 @@
 
 ## Welcome
 
-Welcome to Kitesocial, a twitter clone!
+Welcome to Kitesocial, a Twitter clone!
 
 ## Development setup
 
