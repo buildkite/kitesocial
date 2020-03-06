@@ -9,4 +9,6 @@
 <% end %>
 
 <h3>Chirps</h3>
-<%= render @chirps %>
+<div id="chirps" data-user="<%= @user.id %>">
+  <%= render @chirps %>
+</div>
