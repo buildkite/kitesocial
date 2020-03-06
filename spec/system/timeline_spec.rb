@@ -39,6 +39,16 @@ RSpec.describe "Timeline", type: :system do
 
       expect(page).to have_no_text("things and stuff")
     end
+
+    it "shows mentions from strangers" do
+      eve.chirps.create!(content: "things and stuff")
+      eve.chirps.create!(content: "hey @alice! fancy seeing you here")
+
+      visit root_path
+
+      expect(page).to have_no_text("things and stuff")
+      expect(page).to have_text("fancy seeing you here")
+    end
   end
 
   describe "firehose" do
