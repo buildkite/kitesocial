@@ -39,6 +39,16 @@ header h1 {
   margin: 0 .25em 0 0;
 }
 
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 600;
+}
+
+a:hover, a:active {
+  text-decoration: underline;
+}
+
 button, input[type=button], input[type=submit] {
   font-family: inherit;
   font-size: 0.9em;
