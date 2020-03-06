@@ -1,24 +1,28 @@
-# README
+<p align="center">
+  <br/>
+  <img src="app/assets/images/logo.png" alt="Kitesocial" width="50%" align="center"/>
+  <br/>
+  <br/>
+  It's like Twitter, but for Buildkite.
+  <br/>
+</p>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Welcome
 
-Things you may want to cover:
+Welcome to Kitesocial, a Twitter clone!
 
-* Ruby version
+## Development setup
 
-* System dependencies
+To run Kitesocial, you will need:
 
-* Configuration
+- Ruby 2.6.5
+- Rails 6.0.2
+- Yarn 1.19.1
 
-* Database creation
+Once you've cloned the repo, run:
 
-* Database initialization
+```
+  bin/setup
+```
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Then you'll be able to spin up your server!
