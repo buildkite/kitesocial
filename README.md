@@ -19,12 +19,10 @@ To run Kitesocial, you will need:
 - Rails 6.0.2
 - Yarn 1.19.1
 
-Once you've cloned the repo:
+Once you've cloned the repo, run:
 
 ```
-  bundle install
-  rails db:migrate RAILS_ENV=development
-  rake db:seed
+  bin/setup
 ```
 
 Then you'll be able to spin up your server!
