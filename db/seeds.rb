@@ -17,3 +17,15 @@ chirp_4 = Chirp.create(author: ron, content: "I'm focusing on the important thin
 chirp_5 = Chirp.create(author: bellatrix, content: "Off to do some super secret death eater business!")
 chirp_6 = Chirp.create(author: voldemort, content: "Who wants to join my @HarryPotter hunt? 😎")
 chirp_7 = Chirp.create(author: harry, content: "Wait, what did @Voldemort just say?")
+
+harry.followers << ron
+harry.followers << hermione
+harry.followers << voldemort
+
+ron.followers << harry
+ron.followers << hermione
+
+hermione.followers << harry
+hermione.followers << ron
+
+voldemort.followers << bellatrix
