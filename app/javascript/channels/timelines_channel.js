@@ -1,15 +1,15 @@
-import consumer from "./consumer"
+import consumer from "./consumer";
 
-var channel;
+let channel;
 
-window.addEventListener("turbolinks:load", (event) => {
+window.addEventListener("turbolinks:load", () => {
   if (channel) {
     channel.unsubscribe();
     channel = null;
   }
 
-  var timeline = document.getElementById("timeline");
-  if (!timeline) return;
+  const timeline = document.getElementById("timeline");
+  if (!timeline) {return;}
 
   channel = consumer.subscriptions.create("TimelinesChannel", {
     received(data) {
