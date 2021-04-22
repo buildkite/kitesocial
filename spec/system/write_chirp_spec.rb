@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "Write chirp", type: :system do
+RSpec.describe "Write chirp", type: :system, js: true do
   before do
     login
   end
@@ -19,6 +19,8 @@ RSpec.describe "Write chirp", type: :system do
 
     fill_in "chirp_content", with: "Hello world"
     click_button "Chirp!"
+
+    expect(page).to have_text("Hello world")
 
     fill_in "chirp_content", with: "More content here"
     click_button "Chirp!"
