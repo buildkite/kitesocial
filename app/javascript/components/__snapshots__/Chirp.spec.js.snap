@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`mention tracking avoids things that look like email addresses 1`] = `
+<div>
+  <p>
+    I just got a great email from tony
+    @bob
+    .com!
+  </p>
+  -- 
+  <a
+    href="/users/1"
+  >
+    @
+    alice
+  </a>
+  , 
+  <RelativeDateTime
+    value="2021-04-22T01:08:10Z"
+  />
+</div>
+`;
+
+exports[`mention tracking links to mentioned users 1`] = `
+<div>
+  <p>
+    hey 
+    <a
+      href="/users/2"
+    >
+      @
+      bob
+    </a>
+     
+    <a
+      href="/users/2"
+    >
+      @
+      bob
+    </a>
+     
+    <a
+      href="/users/3"
+    >
+      @
+      carol
+    </a>
+     
+    <a
+      href="/users/2"
+    >
+      @
+      bob
+    </a>
+     
+    <a
+      href="/users/2"
+    >
+      @
+      bob
+    </a>
+    
+  </p>
+  -- 
+  <a
+    href="/users/1"
+  >
+    @
+    alice
+  </a>
+  , 
+  <RelativeDateTime
+    value="2021-04-22T01:08:10Z"
+  />
+</div>
+`;

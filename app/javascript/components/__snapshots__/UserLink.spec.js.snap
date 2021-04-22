@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders as a link based on the user data 1`] = `
+<a
+  href="/users/1"
+>
+  @
+  alice
+</a>
+`;

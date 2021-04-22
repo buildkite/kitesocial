@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import consumer from "../channels/consumer";
+import consumer from '../channels/consumer';
 
 import Chirp from './Chirp';
 

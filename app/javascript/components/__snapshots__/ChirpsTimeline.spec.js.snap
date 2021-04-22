@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ActionCable subscriptions renders chirps which are passed in via the subscribed channel 1`] = `<section />`;
+
+exports[`ActionCable subscriptions renders chirps which are passed in via the subscribed channel 2`] = `
+<section>
+  <Chirp
+    chirp={
+      Object {
+        "author": Object {
+          "id": 1,
+          "name": "alice",
+          "url": "/users/1",
+        },
+        "content": "hey again @bob",
+        "created_at": "2021-04-22T01:08:10Z",
+        "id": 2,
+        "mentions": Array [
+          Object {
+            "id": 2,
+            "name": "bob",
+            "url": "/users/2",
+          },
+        ],
+        "updated_at": "2021-04-22T01:08:10Z",
+      }
+    }
+  />
+</section>
+`;
+
+exports[`renders chirps which are passed in via props 1`] = `
+<section>
+  <Chirp
+    chirp={
+      Object {
+        "author": Object {
+          "id": 1,
+          "name": "alice",
+          "url": "/users/1",
+        },
+        "content": "hey @bob @bob @carol @bob @bob",
+        "created_at": "2021-04-22T01:08:10Z",
+        "id": 1,
+        "mentions": Array [
+          Object {
+            "id": 2,
+            "name": "bob",
+            "url": "/users/2",
+          },
+          Object {
+            "id": 3,
+            "name": "carol",
+            "url": "/users/3",
+          },
+        ],
+        "updated_at": "2021-04-22T01:08:10Z",
+      }
+    }
+  />
+</section>
+`;
