@@ -13,7 +13,7 @@ RSpec.describe ChirpPresenter, type: :presenter do
     it "formats a chirp in a suitable format for use as JSON" do
       mention = alice.chirps.create!(content: "hey @bob @bob @carol @bob @bob")
 
-      chirp_data = ChirpPresenter.to_hash(mention)
+      chirp_data = ChirpPresenter.to_hash(mention, alice)
       expect(chirp_data).to match({
         id: mention.id,
         author: { id: alice.id,
@@ -30,6 +30,9 @@ RSpec.describe ChirpPresenter, type: :presenter do
             url: "/users/#{carol.id}" }
         ],
         updated_at: mention.updated_at.rfc3339,
+        likes_count: 0,
+        liked: false,
+        like_url: "/chirps/1/like",
       })
     end
   end

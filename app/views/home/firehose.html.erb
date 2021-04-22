@@ -3,7 +3,7 @@
 <div id="chirps"></div>
 
 <%= content_tag "script", id: "data", type: "application/json" do %>
-  <%= json_escape(@timeline.map { |chirp| ChirpPresenter.to_hash(chirp) }.to_json).html_safe %>
+  <%= json_escape(@timeline.map { |chirp| ChirpPresenter.to_hash(chirp, current_user) }.to_json).html_safe %>
 <% end %>
 
 <%= javascript_pack_tag 'chirps' %>

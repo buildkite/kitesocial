@@ -18,6 +18,14 @@ exports[`mention tracking avoids things that look like email addresses 1`] = `
   <RelativeDateTime
     value="2021-04-22T01:08:10Z"
   />
+   
+  <a
+    disabled={false}
+    href="/chirps/1/like"
+    onClick={[Function]}
+  >
+    Like
+  </a>
 </div>
 `;
 
@@ -72,5 +80,13 @@ exports[`mention tracking links to mentioned users 1`] = `
   <RelativeDateTime
     value="2021-04-22T01:08:10Z"
   />
+   
+  <a
+    disabled={false}
+    href="/chirps/1/like"
+    onClick={[Function]}
+  >
+    Like
+  </a>
 </div>
 `;

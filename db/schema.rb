@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_06_042431) do
+ActiveRecord::Schema.define(version: 2021_04_22_223542) do
 
   create_table "chirps", force: :cascade do |t|
     t.integer "author_id", null: false
@@ -35,6 +35,15 @@ ActiveRecord::Schema.define(version: 2020_03_06_042431) do
     t.index ["friend_id"], name: "index_follows_on_friend_id"
   end
 
+  create_table "likes", force: :cascade do |t|
+    t.integer "liker_id", null: false
+    t.integer "chirp_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["chirp_id"], name: "index_likes_on_chirp_id"
+    t.index ["liker_id"], name: "index_likes_on_liker_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -46,4 +55,6 @@ ActiveRecord::Schema.define(version: 2020_03_06_042431) do
   add_foreign_key "chirps", "users", column: "author_id"
   add_foreign_key "follows", "users", column: "follower_id"
   add_foreign_key "follows", "users", column: "friend_id"
+  add_foreign_key "likes", "chirps"
+  add_foreign_key "likes", "users", column: "liker_id"
 end

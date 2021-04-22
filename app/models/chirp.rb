@@ -1,6 +1,9 @@
 class Chirp < ApplicationRecord
   belongs_to :author, class_name: "User"
+  has_many :likes, foreign_key: :chirp_id, inverse_of: :chirp
   has_and_belongs_to_many :mentions, class_name: "User"
+
+  has_many :likers, through: :likes
 
   before_create :record_mentions
   after_create :broadcast

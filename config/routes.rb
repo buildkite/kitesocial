@@ -3,7 +3,10 @@ Rails.application.routes.draw do
 
   resource :session
 
-  resources :chirps
+  resources :chirps do
+    resource :like
+  end
+
   resources :users do
     resource :follow
   end

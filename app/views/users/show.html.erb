@@ -13,7 +13,7 @@
 <div id="chirps" data-user="<%= @user.id %>"></div>
 
 <%= content_tag "script", id: "data", type: "application/json" do %>
-  <%= json_escape(@chirps.map { |chirp| ChirpPresenter.to_hash(chirp) }.to_json).html_safe %>
+  <%= json_escape(@chirps.map { |chirp| ChirpPresenter.to_hash(chirp, current_user) }.to_json).html_safe %>
 <% end %>
 
 <%= javascript_pack_tag 'chirps' %>
