@@ -8,6 +8,7 @@ module.exports = {
   parser: '@babel/eslint-parser',
   extends: [
     'eslint:recommended',
+    'plugin:react/recommended',
     'plugin:import/recommended'
   ],
   globals: {
@@ -20,8 +21,14 @@ module.exports = {
   },
   plugins: [
     'import',
+    'react',
     '@babel'
   ],
+  settings: {
+    react: {
+      version: "17.0"
+    }
+  },
   rules: {
     '@babel/object-curly-spacing': [ERROR, 'always'],
     '@babel/semi': ERROR,
@@ -67,6 +74,65 @@ module.exports = {
 
     'import/extensions': [ERROR, "never", { "css": "always", "png": "always", "svg": "always" }],
     'import/unambiguous': OFF,
-    'import/no-unresolved': ERROR
+    'import/no-unresolved': ERROR,
+
+    'react/display-name': [ERROR, { ignoreTranspilerName: false }],
+    'react/forbid-prop-types': OFF,
+    'react/jsx-boolean-value': [ERROR, 'always'],
+    'react/jsx-child-element-spacing': ERROR,
+    'react/jsx-closing-bracket-location': ERROR,
+    'react/jsx-closing-tag-location': ERROR,
+    'react/jsx-curly-brace-presence': ERROR,
+    'react/jsx-curly-newline': ERROR,
+    'react/jsx-curly-spacing': ERROR,
+    'react/jsx-equals-spacing': [ERROR, 'never'],
+    'react/jsx-first-prop-new-line': [ERROR, 'multiline'],
+    'react/jsx-fragments': [ERROR, 'element'],
+    'react/jsx-handler-names': ERROR,
+    'react/jsx-indent': [ERROR, 2],
+    'react/jsx-indent-props': [ERROR, 2],
+    'react/jsx-key': ERROR,
+    'react/jsx-max-props-per-line': [ERROR, { when: 'multiline' }],
+    'react/jsx-no-bind': [WARN, { ignoreRefs: true }],
+    'react/jsx-no-comment-textnodes': ERROR,
+    'react/jsx-no-duplicate-props': ERROR,
+    'react/jsx-no-literals': OFF,
+    'react/jsx-no-script-url': ERROR,
+    'react/jsx-no-target-blank': ERROR,
+    'react/jsx-no-undef': [ERROR, { allowGlobals: true }],
+    'react/jsx-no-useless-fragment': ERROR,
+    'react/jsx-pascal-case': ERROR,
+    'react/jsx-props-no-multi-spaces': ERROR,
+    'react/jsx-sort-prop-types': OFF,
+    'react/jsx-sort-props': OFF,
+    'react/jsx-tag-spacing': ERROR,
+    'react/jsx-uses-react': ERROR,
+    'react/jsx-uses-vars': ERROR,
+    'react/jsx-wrap-multilines': [ERROR, { declaration: "parens-new-line" }],
+    'react/no-array-index-key': WARN,
+    'react/no-danger': OFF,
+    'react/no-danger-with-children': ERROR,
+    'react/no-deprecated': ERROR,
+    'react/no-did-mount-set-state': ERROR,
+    'react/no-did-update-set-state': ERROR,
+    'react/no-direct-mutation-state': ERROR,
+    'react/no-is-mounted': ERROR,
+    'react/no-multi-comp': [ERROR, { ignoreStateless: true }],
+    'react/no-set-state': OFF,
+    'react/no-string-refs': ERROR,
+    'react/no-unescaped-entities': ERROR,
+    'react/no-unknown-property': ERROR,
+    'react/no-unsafe': OFF,
+    'react/no-unused-prop-types': ERROR,
+    'react/prefer-es6-class': ERROR,
+    'react/prefer-stateless-function': OFF,
+    'react/prop-types': ERROR,
+    'react/react-in-jsx-scope': ERROR,
+    'react/require-optimization': WARN,
+    'react/require-render-return': ERROR,
+    'react/self-closing-comp': WARN,
+    'react/sort-comp': OFF,
+    'react/style-prop-object': WARN,
+    'react/void-dom-elements-no-children': ERROR
   }
 };

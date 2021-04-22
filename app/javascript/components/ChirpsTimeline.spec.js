@@ -14,8 +14,8 @@ it('renders chirps which are passed in via props', () => {
       chirps={[{
         id: 1,
         author: { id: 1,
-                  name: "alice",
-                  url: "/users/1" },
+          name: "alice",
+          url: "/users/1" },
         content: "hey @bob @bob @carol @bob @bob",
         created_at: "2021-04-22T01:08:10Z",
         mentions: [
@@ -26,12 +26,12 @@ it('renders chirps which are passed in via props', () => {
             name: "carol",
             url: "/users/3" }
         ],
-        updated_at: "2021-04-22T01:08:10Z",
+        updated_at: "2021-04-22T01:08:10Z"
       }]}
-    />,
+    />
   );
 
-  let tree = component.toJSON();
+  const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
 
@@ -43,21 +43,21 @@ describe('ActionCable subscriptions', () => {
       <ChirpsTimeline
         subscription="MockedChannel"
         chirps={[]}
-      />,
+      />
     );
 
-    let treeBefore = component.toJSON();
+    const treeBefore = component.toJSON();
     expect(treeBefore).toMatchSnapshot();
 
     expect(consumer.subscriptions.subscriptions.length).toEqual(1);
-    
+
     const receivedCallback = consumer.subscriptions.subscriptions[0].received;
 
     receivedCallback({
       id: 2,
       author: { id: 1,
-                name: "alice",
-                url: "/users/1" },
+        name: "alice",
+        url: "/users/1" },
       content: "hey again @bob",
       created_at: "2021-04-22T01:08:10Z",
       mentions: [
@@ -65,10 +65,10 @@ describe('ActionCable subscriptions', () => {
           name: "bob",
           url: "/users/2" }
       ],
-      updated_at: "2021-04-22T01:08:10Z",
+      updated_at: "2021-04-22T01:08:10Z"
     });
 
-    let treeAfter = component.toJSON();
+    const treeAfter = component.toJSON();
     expect(treeAfter).toMatchSnapshot();
   });
 });

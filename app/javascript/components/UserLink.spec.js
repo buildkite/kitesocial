@@ -12,9 +12,9 @@ it('renders as a link based on the user data', () => {
         name: "alice",
         url: "/users/1"
       }}
-    />,
+    />
   );
 
-  let tree = component.toJSON();
+  const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });

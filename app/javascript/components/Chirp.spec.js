@@ -15,8 +15,8 @@ describe('mention tracking', () => {
         chirp={{
           id: 1,
           author: { id: 1,
-                    name: "alice",
-                    url: "/users/1" },
+            name: "alice",
+            url: "/users/1" },
           content: "hey @bob @bob @carol @bob @bob",
           created_at: "2021-04-22T01:08:10Z",
           mentions: [
@@ -27,12 +27,12 @@ describe('mention tracking', () => {
               name: "carol",
               url: "/users/3" }
           ],
-          updated_at: "2021-04-22T01:08:10Z",
+          updated_at: "2021-04-22T01:08:10Z"
         }}
-      />,
+      />
     );
 
-    let tree = component.toJSON();
+    const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
 
@@ -42,17 +42,17 @@ describe('mention tracking', () => {
         chirp={{
           id: 1,
           author: { id: 1,
-                    name: "alice",
-                    url: "/users/1" },
+            name: "alice",
+            url: "/users/1" },
           content: "I just got a great email from tony@bob.com!",
           created_at: "2021-04-22T01:08:10Z",
           mentions: [],
-          updated_at: "2021-04-22T01:08:10Z",
+          updated_at: "2021-04-22T01:08:10Z"
         }}
-      />,
+      />
     );
 
-    let tree = component.toJSON();
+    const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

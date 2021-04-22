@@ -1,4 +1,6 @@
 import * as React from 'react';
+import PropTypes from 'prop-types';
+
 import { DateTime } from 'luxon';
 
 const TARGET_UNITS = ['years', 'months', 'weeks', 'days', 'hours', 'minutes', 'seconds'];
@@ -28,6 +30,10 @@ const RelativeDateTime = ({ value }) => {
       {formatDate(date)}
     </time>
   );
-}
+};
+
+RelativeDateTime.propTypes = {
+  value: PropTypes.string.isRequired
+};
 
 export default RelativeDateTime;

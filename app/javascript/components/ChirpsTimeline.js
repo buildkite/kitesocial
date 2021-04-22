@@ -1,4 +1,5 @@
 import * as React from 'react';
+import PropTypes from 'prop-types';
 
 import consumer from '../channels/consumer';
 
@@ -13,7 +14,7 @@ class ChirpsTimeline extends React.PureComponent {
     return [
       ...this.state.chirps,
       ...this.props.chirps
-    ]
+    ];
   }
 
   componentDidMount() {
@@ -33,8 +34,8 @@ class ChirpsTimeline extends React.PureComponent {
   }
 
   handleChirpReceived = (chirp) => {
-    this.setState({ chirps: [...this.state.chirps, chirp] })
-  }
+    this.setState({ chirps: [...this.state.chirps, chirp] });
+  };
 
   render() {
     return (
@@ -45,6 +46,19 @@ class ChirpsTimeline extends React.PureComponent {
       </section>
     );
   }
+}
+
+ChirpsTimeline.propTypes = {
+  chirps: PropTypes.arrayOf(
+    PropTypes.object
+  ).isRequired,
+  subscription: PropTypes.oneOfType([
+    PropTypes.string.isRequired,
+    PropTypes.shape({
+      channel: PropTypes.string.isRequired,
+      user: PropTypes.number
+    }).isRequired
+  ])
 };
 
 export default ChirpsTimeline;

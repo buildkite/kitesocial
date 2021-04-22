@@ -1,4 +1,5 @@
 import * as React from 'react';
+import PropTypes from 'prop-types';
 
 import UserLink from './UserLink';
 import RelativeDateTime from './RelativeDateTime';
@@ -16,7 +17,7 @@ const Chirp = ({ chirp }) => {
       const slicedSegment = segment.slice(1).toLowerCase();
 
       if (Object.prototype.hasOwnProperty.call(knownMentions, slicedSegment)) {
-        return <UserLink user={knownMentions[slicedSegment]} key={index} />;
+        return <UserLink user={knownMentions[slicedSegment]} key={index} />; // eslint-disable-line react/no-array-index-key
       }
     }
 
@@ -31,6 +32,17 @@ const Chirp = ({ chirp }) => {
       <RelativeDateTime value={chirp.created_at} />
     </div>
   );
-}
+};
+
+Chirp.propTypes = {
+  chirp: PropTypes.shape({
+    content: PropTypes.string.isRequired,
+    author: PropTypes.object.isRequired,
+    mentions: PropTypes.arrayOf(
+      PropTypes.object
+    ).isRequired,
+    created_at: PropTypes.string.isRequired
+  }).isRequired
+};
 
 export default Chirp;
