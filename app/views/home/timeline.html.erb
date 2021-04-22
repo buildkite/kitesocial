@@ -1,6 +1,6 @@
 <%= form_with model: Chirp.new do |form| %>
   <%= form.label :content, "What's up?" %><br>
-  <%= form.text_field :content %>
+  <%= form.text_field :content, required: true %>
   <%= form.submit "Chirp!" %>
 <% end %>
 
