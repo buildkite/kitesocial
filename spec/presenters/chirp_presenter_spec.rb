@@ -15,6 +15,7 @@ RSpec.describe ChirpPresenter, type: :presenter do
 
       chirp_data = ChirpPresenter.to_hash(mention)
       expect(chirp_data).to match({
+        id: mention.id,
         author: { id: alice.id,
                   name: alice.name,
                   url: "/users/#{alice.id}" },
