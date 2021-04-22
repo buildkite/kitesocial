@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "Timeline", type: :system do
+RSpec.describe "Timeline", type: :system, js: true do
   let(:alice) { User.create!(name: "alice", email: "alice@example.com", password: "secretstuff") }
   let(:bob) { User.create!(name: "bob", email: "bob@example.com", password: "opensesame") }
   let(:eve) { User.create!(name: "eve", email: "eve@example.com", password: "spyvsspy") }

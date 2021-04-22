@@ -8,6 +8,11 @@
 
 <h2>Timeline</h2>
 
-<div id="timeline">
-  <%= render @timeline %>
-</div>
+<div id="timeline"></div>
+
+<%= content_tag "script", id: "chirps", type: "application/json" do %>
+  <%= json_escape(@timeline.map { |chirp| ChirpPresenter.to_hash(chirp) }.to_json).html_safe %>
+<% end %>
+
+<%= javascript_pack_tag 'timeline' %>
+<%= stylesheet_pack_tag 'timeline' %>
