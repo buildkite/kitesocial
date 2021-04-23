@@ -1,5 +1,197 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Like button sends a like request to the API 1`] = `
+<div>
+  <p>
+    hey 
+    <a
+      href="/users/2"
+    >
+      @
+      bob
+    </a>
+     
+    <a
+      href="/users/2"
+    >
+      @
+      bob
+    </a>
+     
+    <a
+      href="/users/3"
+    >
+      @
+      carol
+    </a>
+     
+    <a
+      href="/users/2"
+    >
+      @
+      bob
+    </a>
+     
+    <a
+      href="/users/2"
+    >
+      @
+      bob
+    </a>
+    
+  </p>
+  -- 
+  <a
+    href="/users/1"
+  >
+    @
+    alice
+  </a>
+  , 
+  <RelativeDateTime
+    value="2021-04-22T01:08:10Z"
+  />
+   • 
+  0 likes
+   • 
+  <a
+    disabled={false}
+    href="/chirps/1/like"
+    onClick={[Function]}
+  >
+    Like
+  </a>
+</div>
+`;
+
+exports[`Like button sends a like request to the API 2`] = `
+<div>
+  <p>
+    hey 
+    <a
+      href="/users/2"
+    >
+      @
+      bob
+    </a>
+     
+    <a
+      href="/users/2"
+    >
+      @
+      bob
+    </a>
+     
+    <a
+      href="/users/3"
+    >
+      @
+      carol
+    </a>
+     
+    <a
+      href="/users/2"
+    >
+      @
+      bob
+    </a>
+     
+    <a
+      href="/users/2"
+    >
+      @
+      bob
+    </a>
+    
+  </p>
+  -- 
+  <a
+    href="/users/1"
+  >
+    @
+    alice
+  </a>
+  , 
+  <RelativeDateTime
+    value="2021-04-22T01:08:10Z"
+  />
+   • 
+  0 likes
+   • 
+  <a
+    disabled={true}
+    href="/chirps/1/like"
+    onClick={[Function]}
+  >
+    Like
+  </a>
+</div>
+`;
+
+exports[`Like button sends a like request to the API 3`] = `
+<div>
+  <p>
+    hey 
+    <a
+      href="/users/2"
+    >
+      @
+      bob
+    </a>
+     
+    <a
+      href="/users/2"
+    >
+      @
+      bob
+    </a>
+     
+    <a
+      href="/users/3"
+    >
+      @
+      carol
+    </a>
+     
+    <a
+      href="/users/2"
+    >
+      @
+      bob
+    </a>
+     
+    <a
+      href="/users/2"
+    >
+      @
+      bob
+    </a>
+    
+  </p>
+  -- 
+  <a
+    href="/users/1"
+  >
+    @
+    alice
+  </a>
+  , 
+  <RelativeDateTime
+    value="2021-04-22T01:08:10Z"
+  />
+   • 
+  1 like
+   • 
+  <a
+    disabled={false}
+    href="/chirps/1/like"
+    onClick={[Function]}
+  >
+    Unlike
+  </a>
+</div>
+`;
+
 exports[`mention tracking avoids things that look like email addresses 1`] = `
 <div>
   <p>

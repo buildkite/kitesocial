@@ -1,5 +1,6 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
+import document from 'global/document';
 
 import UserLink from './UserLink';
 import RelativeDateTime from './RelativeDateTime';
@@ -71,7 +72,6 @@ export default class Chirp extends React.PureComponent {
             return response.json();
           }
           this.setState({ liking: false });
-
         })
         .then((chirp) => {
           this.setState({
