@@ -13,6 +13,7 @@ export default class Chirp extends React.PureComponent {
         PropTypes.object
       ).isRequired,
       created_at: PropTypes.string.isRequired,
+      likes_count: PropTypes.number.isRequired,
       liked: PropTypes.bool.isRequired,
       like_url: PropTypes.string.isRequired
     }).isRequired

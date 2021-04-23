@@ -28,7 +28,7 @@ describe('mention tracking', () => {
               url: "/users/3" }
           ],
           updated_at: "2021-04-22T01:08:10Z",
-          likes: 0,
+          likes_count: 0,
           liked: false,
           like_url: "/chirps/1/like"
         }}
@@ -51,7 +51,7 @@ describe('mention tracking', () => {
           created_at: "2021-04-22T01:08:10Z",
           mentions: [],
           updated_at: "2021-04-22T01:08:10Z",
-          likes: 0,
+          likes_count: 0,
           liked: false,
           like_url: "/chirps/1/like"
         }}

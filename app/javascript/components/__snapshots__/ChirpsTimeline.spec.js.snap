@@ -15,6 +15,9 @@ exports[`ActionCable subscriptions renders chirps which are passed in via the su
         "content": "hey again @bob",
         "created_at": "2021-04-22T01:08:10Z",
         "id": 2,
+        "like_url": "/chirps/1/like",
+        "liked": false,
+        "likes_count": 0,
         "mentions": Array [
           Object {
             "id": 2,
@@ -42,6 +45,9 @@ exports[`renders chirps which are passed in via props 1`] = `
         "content": "hey @bob @bob @carol @bob @bob",
         "created_at": "2021-04-22T01:08:10Z",
         "id": 1,
+        "like_url": "/chirps/1/like",
+        "liked": false,
+        "likes_count": 0,
         "mentions": Array [
           Object {
             "id": 2,

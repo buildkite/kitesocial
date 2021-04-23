@@ -26,7 +26,10 @@ it('renders chirps which are passed in via props', () => {
             name: "carol",
             url: "/users/3" }
         ],
-        updated_at: "2021-04-22T01:08:10Z"
+        updated_at: "2021-04-22T01:08:10Z",
+        likes_count: 0,
+        liked: false,
+        like_url: "/chirps/1/like"
       }]}
     />
   );
@@ -65,7 +68,10 @@ describe('ActionCable subscriptions', () => {
           name: "bob",
           url: "/users/2" }
       ],
-      updated_at: "2021-04-22T01:08:10Z"
+      updated_at: "2021-04-22T01:08:10Z",
+      likes_count: 0,
+      liked: false,
+      like_url: "/chirps/1/like"
     });
 
     const treeAfter = component.toJSON();
