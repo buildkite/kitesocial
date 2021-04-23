@@ -59,4 +59,21 @@ RSpec.describe User, type: :model do
       expect(subject).not_to include("eight")
     end
   end
+
+  describe "#liked?" do
+    before do
+      alice.liked_chirps << bob.chirps.first
+      alice.liked_chirps << carol.chirps.first
+    end
+
+    it "returns true for chirps they like" do
+      expect(alice.liked? bob.chirps.first).to eql(true)
+      expect(alice.liked? carol.chirps.first).to eql(true)
+    end
+    
+    it "returns false for chirps they don't" do
+      expect(alice.liked? eve.chirps.first).to eql(false)
+      expect(alice.liked? alice.chirps.first).to eql(false)
+    end
+  end
 end
