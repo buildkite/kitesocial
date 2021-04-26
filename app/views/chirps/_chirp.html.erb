@@ -1,2 +1,2 @@
 <p><%= chirp_body(chirp) %><br>
--- <%= user_link(chirp.author) %>, <%= time(chirp.created_at) %></p>
+-- <%= user_link(chirp.author) %>, <time title="<%= chirp.created_at.to_s %>" datetime="<%= chirp.created_at.rfc3339 %>"><%= time(chirp.created_at) %></time></p>

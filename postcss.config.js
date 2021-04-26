@@ -1,3 +1,5 @@
+/* eslint-env node */
+
 module.exports = {
   plugins: [
     require('postcss-import'),
@@ -9,4 +11,4 @@ module.exports = {
       stage: 3
     })
   ]
-}
+};

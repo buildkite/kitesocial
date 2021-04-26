@@ -1,0 +1,6 @@
+# Webpacker
+public/packs
+public/packs-test
+
+# Jest coverage output
+coverage
