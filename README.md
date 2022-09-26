@@ -17,9 +17,9 @@ To run Kitesocial, you will need:
 
 - Ruby 2.7.6
 - Rails 6.0.3
+- Node 16.12.0
 - Yarn 1.19.1
 - Chrome or Chromium
-- Python 2.7 (to install node-gyp)
 
 Once you've cloned the repo, run:
 
