@@ -105,6 +105,7 @@ GEM
     matrix (0.4.2)
     method_source (1.0.0)
     mini_mime (1.1.5)
+    mini_portile2 (2.8.4)
     minitest (5.19.0)
     msgpack (1.7.2)
     net-imap (0.3.7)
@@ -117,6 +118,9 @@ GEM
     net-smtp (0.3.3)
       net-protocol
     nio4r (2.5.9)
+    nokogiri (1.15.4)
+      mini_portile2 (~> 2.8.2)
+      racc (~> 1.4)
     nokogiri (1.15.4-arm64-darwin)
       racc (~> 1.4)
     public_suffix (5.0.3)
@@ -206,6 +210,8 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
+    sqlite3 (1.6.3)
+      mini_portile2 (~> 2.8.0)
     sqlite3 (1.6.3-arm64-darwin)
     thor (1.2.2)
     tilt (2.2.0)
@@ -239,6 +245,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-22
+  ruby
 
 DEPENDENCIES
   bcrypt (~> 3.1.7)
