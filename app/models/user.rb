@@ -2,11 +2,14 @@ class User < ApplicationRecord
   has_secure_password
 
   has_many :chirps, foreign_key: :author_id, inverse_of: :author
-  has_many :follows, foreign_key: :follower_id, inverse_of: :follower
-  has_many :incoming_follows, class_name: "Follow", foreign_key: :friend_id, inverse_of: :friend
   has_and_belongs_to_many :mentions, class_name: "Chirp"
 
+  # People the user follows
+  has_many :follows, foreign_key: :follower_id, inverse_of: :follower
   has_many :friends, through: :follows
+
+  # People following the user
+  has_many :incoming_follows, class_name: "Follow", foreign_key: :friend_id, inverse_of: :friend
   has_many :followers, through: :incoming_follows
 
   validates :name, format: /\A\w+\z/
