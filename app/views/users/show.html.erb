@@ -8,7 +8,8 @@
   <% end %>
 <% end %>
 
-<h3>Chirps</h3>
-<div id="chirps" data-user="<%= @user.id %>">
+<%= turbo_stream_from ["chirps", @user.id] %>
+
+<div id="chirps">
   <%= render @chirps %>
 </div>

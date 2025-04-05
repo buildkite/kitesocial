@@ -1,6 +1,6 @@
 <p align="center">
   <br/>
-  <img src="app/assets/images/logo.png" alt="Kitesocial" width="50%" align="center"/>
+  <img src="public/logo.png" alt="Kitesocial" width="50%" align="center"/>
   <br/>
   <br/>
   It's like Twitter, but for Buildkite.
@@ -15,10 +15,8 @@ Welcome to Kitesocial, a Twitter clone!
 
 To run Kitesocial, you will need:
 
-- Ruby 3.2.2
-- Rails 6.0.3
-- Node 16.12.0
-- Yarn 1.19.1
+- Ruby 3.4.1
+- Rails 8.0.2
 - Chrome or Chromium
 
 Once you've cloned the repo, run:

@@ -6,7 +6,7 @@
 
 <p><%= link_to("See what everyone's saying", firehose_path) %></p>
 
-<h2>Timeline</h2>
+<%= turbo_stream_from ["timeline", current_user.id] %>
 
 <div id="timeline">
   <%= render @timeline %>
