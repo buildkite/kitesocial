@@ -27,11 +27,11 @@
       <h1><%= link_to(root_path) { image_tag('logo.png', alt: 'Kitesocial', style: 'max-width: 322px;width: 100%') } %></h1>
       <% if current_user %>
         <%= user_link(current_user) %>
-        <%= button_to "Log out", session_path, method: :delete %>
+        <%= button_to "Log out", session_path, method: :delete, class: "h-10 px-4 rounded-sm bg-white border border-gray-300 cursor-pointer text-base/6 text-gray-900 hover:bg-gray-50 focus:ring-2 focus:ring-[#14CC81] focus:ring-offset-2 focus:outline-none" %>
       <% end %>
     </header>
     <main>
-    <%= yield %>
+      <%= yield %>
     </main>
   </body>
 </html>

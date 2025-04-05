@@ -1,1 +1,6 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/forms";
+
+turbo-frame {
+  display: block;
+}

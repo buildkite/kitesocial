@@ -1,15 +1,33 @@
-<h2>What is Kitesocial?</h2>
+<h2 class="text-2xl font-bold mb-4">What is Kitesocial?</h2>
 <p>Kitesocial is a service for friends, family, and co–workers to communicate and stay connected through the exchange of quick, frequent answers to one simple question: <strong>What's up?</strong></p>
 
 <% if flash[:alert].present? %>
-  <p><%= flash[:alert] %></p>
+  <div class="my-6">
+    <p class="bg-red-50/50 border border-red-100 w-full h-12 text-red-900 inline-flex items-center px-3 rounded-md">
+      <%= flash[:alert] %>
+    </p>
+  </div>
 <% end %>
 
-<%= form_with url: session_path, method: :post do |form| %>
-  <h2>Log in</h2>
-  <%= form.label :email %><br>
-  <%= form.email_field :email %><br>
-  <%= form.label :password %><br>
-  <%= form.password_field :password %><br>
-  <%= form.submit "Log in" %>
+<%= form_with url: session_path, method: :post, class: "w-full mt-6" do |form| %>
+  <h2 class="text-2xl font-bold mb-4">Log in</h2>
+  <%= field_set_tag nil, class: "space-y-4" do %>
+    <div class="space-y-2">
+      <%= form.label :email, class: "block text-base/6 text-gray-900" %>
+      <%= form.email_field :email,
+          autofocus: true,
+          required: true,
+          class: "px-3 h-10 w-full rounded-md border border-gray-300 focus:border-[#14CC81] focus:ring-[#14CC81]" %>
+    </div>
+    <div class="space-y-2">
+      <%= form.label :password, class: "block text-base/6 text-gray-900" %>
+      <%= form.password_field :password,
+          required: true,
+          class: "px-3 h-10 w-full rounded-md border border-gray-300 focus:border-[#14CC81] focus:ring-[#14CC81]" %>
+    </div>
+    <div>
+      <%= form.submit "Log in",
+          class: "h-10 px-4 rounded-sm bg-white border border-gray-300 cursor-pointer text-base/6 text-gray-900 hover:bg-gray-50 focus:ring-2 focus:ring-[#14CC81] focus:ring-offset-2 focus:outline-none" %>
+    </div>
+  <% end %>
 <% end %>
