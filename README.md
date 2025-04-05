@@ -22,7 +22,25 @@ To run Kitesocial, you will need:
 Once you've cloned the repo, run:
 
 ```
-  bin/setup
+  bin/setup --skip-server
 ```
 
 Then you'll be able to spin up your server and run your specs!
+
+## Running the development server
+
+```
+  bin/dev
+```
+
+## Running the test suite
+
+```
+  bin/test
+```
+
+## Running the specs
+
+```
+  bundle exec rspec
+```
