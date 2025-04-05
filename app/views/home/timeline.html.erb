@@ -1,17 +1,6 @@
-<%= form_with model: Chirp.new do |form| %>
-  <%= field_set_tag nil, class: "space-y-4" do %>
-    <div class="space-y-2">
-      <%= form.label :content, "What's up?", class: "block text-base/6 text-gray-900" %>
-      <%= form.text_field :content,
-          required: true,
-          autofocus: true,
-          class: "px-3 h-10 w-full rounded-md border border-gray-300 focus:border-[#14CC81] focus:ring-[#14CC81]" %>
-    </div>
-    <%= form.submit "Chirp!",
-          class: "h-10 px-4 rounded-sm bg-white border border-gray-300 cursor-pointer text-base/6 text-gray-900 hover:bg-gray-50 focus:ring-2 focus:ring-[#14CC81] focus:ring-offset-2 focus:outline-none" %>
-    </div>
-  <% end %>
-<% end %>
+<div id="new_chirp">
+  <%= render "chirps/form" %>
+</div>
 
 <p class="my-4">
   <%= link_to "See what everyone's saying", firehose_path,
