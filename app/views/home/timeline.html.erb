@@ -1,13 +1,16 @@
-<%= form_with model: Chirp.new do |form| %>
-  <%= form.label :content, "What's up?" %><br>
-  <%= form.text_field :content, required: true %>
-  <%= form.submit "Chirp!" %>
-<% end %>
+<div id="new_chirp">
+  <%= render "chirps/form" %>
+</div>
 
-<p><%= link_to("See what everyone's saying", firehose_path) %></p>
+<p class="my-4">
+  <%= link_to "See what everyone's saying", firehose_path,
+      class: "font-bold text-black hover:underline" %>
+</p>
 
-<h2>Timeline</h2>
+<h2 class="text-2xl font-bold mb-4">Timeline</h2>
 
-<div id="timeline">
+<%= turbo_stream_from ["timeline", current_user.id] %>
+
+<div class="space-y-4" id="timeline">
   <%= render @timeline %>
 </div>

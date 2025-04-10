@@ -1,14 +1,21 @@
-<h2><%= @user.name %></h2>
+<h2 class="text-2xl font-bold mb-4"><%= @user.name %></h2>
 
 <% unless @user == current_user %>
-  <% if current_user.following?(@user) %>
-    <%= button_to "Unfollow", user_follow_path(@user), method: :delete %>
-  <% else %>
-    <%= button_to "Follow", user_follow_path(@user) %>
-  <% end %>
+  <div class="mb-4">
+    <% if current_user.following?(@user) %>
+      <%= button_to "Unfollow", user_follow_path(@user), method: :delete, class: "h-10 px-4 rounded-sm bg-white border border-gray-300 cursor-pointer text-base/6 text-gray-900 hover:bg-gray-50 focus:ring-2 focus:ring-green focus:ring-offset-2 focus:outline-none" %>
+    <% else %>
+      <%= button_to "Follow", user_follow_path(@user), class: "h-10 px-4 rounded-sm bg-white border border-gray-300 cursor-pointer text-base/6 text-gray-900 hover:bg-gray-50 focus:ring-2 focus:ring-green focus:ring-offset-2 focus:outline-none" %>
+    <% end %>
+  </div>
 <% end %>
 
-<h3>Chirps</h3>
-<div id="chirps" data-user="<%= @user.id %>">
+<h3 class="text-lg font-bold mb-4">
+  Chirps
+</h3>
+
+<%= turbo_stream_from ["chirps", @user.id] %>
+
+<div class="space-y-4" id="chirps">
   <%= render @chirps %>
 </div>

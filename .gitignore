@@ -25,6 +25,9 @@
 /public/assets
 .byebug_history
 
+# Ignore generated TailwindCSS file
+app/assets/builds
+
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 

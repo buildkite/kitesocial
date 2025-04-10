@@ -1,5 +1,7 @@
-<h2>Firehose</h2>
+<h2 class="text-2xl font-bold mb-4">Firehose</h2>
 
-<div id="chirps">
+<%= turbo_stream_from "firehose" %>
+
+<div class="space-y-4" id="firehose">
   <%= render @timeline %>
 </div>

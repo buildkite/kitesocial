@@ -1,2 +1,6 @@
-<p><%= chirp_body(chirp) %><br>
--- <%= user_link(chirp.author) %>, <time title="<%= chirp.created_at.to_s %>" datetime="<%= chirp.created_at.rfc3339 %>"><%= time(chirp.created_at) %></time></p>
+<%= turbo_frame_tag dom_id(chirp) do %>
+  <p>
+    <%= chirp_body(chirp) %><br>
+    -- <%= user_link(chirp.author) %>, <time title="<%= chirp.created_at.to_s %>" datetime="<%= chirp.created_at.rfc3339 %>"><%= time(chirp.created_at) %></time>
+  </p>
+<% end %>

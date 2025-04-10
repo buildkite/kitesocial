@@ -1,6 +1,6 @@
 module ApplicationHelper
   def user_link(user)
-    link_to("@#{user.name}", user)
+    link_to("@#{user.name}", user, class: "font-bold text-black hover:underline", data: { turbo_frame: "_top" })
   end
 
   def time(t)
