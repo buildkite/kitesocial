@@ -4,6 +4,7 @@ class SessionsController < ApplicationController
   skip_before_action :require_authenticated_user, except: :destroy
 
   def new
+    redirect_to root_path if current_user
   end
 
   def create
