@@ -3,9 +3,9 @@
 <% unless @user == current_user %>
   <div class="mb-4">
     <% if current_user.following?(@user) %>
-      <%= button_to "Unfollow", user_follow_path(@user), method: :delete, class: "h-10 px-4 rounded-sm bg-white border border-gray-300 cursor-pointer text-base/6 text-gray-900 hover:bg-gray-50 focus:ring-2 focus:ring-[#14CC81] focus:ring-offset-2 focus:outline-none" %>
+      <%= button_to "Unfollow", user_follow_path(@user), method: :delete, class: "h-10 px-4 rounded-sm bg-white border border-gray-300 cursor-pointer text-base/6 text-gray-900 hover:bg-gray-50 focus:ring-2 focus:ring-green focus:ring-offset-2 focus:outline-none" %>
     <% else %>
-      <%= button_to "Follow", user_follow_path(@user), class: "h-10 px-4 rounded-sm bg-white border border-gray-300 cursor-pointer text-base/6 text-gray-900 hover:bg-gray-50 focus:ring-2 focus:ring-[#14CC81] focus:ring-offset-2 focus:outline-none" %>
+      <%= button_to "Follow", user_follow_path(@user), class: "h-10 px-4 rounded-sm bg-white border border-gray-300 cursor-pointer text-base/6 text-gray-900 hover:bg-gray-50 focus:ring-2 focus:ring-green focus:ring-offset-2 focus:outline-none" %>
     <% end %>
   </div>
 <% end %>

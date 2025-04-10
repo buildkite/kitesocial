@@ -1,6 +1,10 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/forms";
 
+@theme {
+  --color-green: #14CC81;
+}
+
 turbo-frame {
   display: block;
 }
