@@ -1,0 +1,53 @@
+common:
+  - aws-assume-role_plugin: &aws-assume-role
+      aws-assume-role-with-web-identity#v1.1.0:
+        role-arn: ${CACHE_ROLE}
+  - zipstash_pkg_plugin: &zstash-node
+      .buildkite/plugins/zstash:
+        id: "node"
+        key: '{{ id }}-{{ agent.os }}-{{ agent.arch }}-{{ checksum "Gemfile.lock" }}'
+        fallback_keys: |
+          {{ id }}-{{ agent.os }}-{{ agent.arch }}-
+        paths: |
+          vendor/bundle
+        bucket-url: $BUCKET_URL
+  -  docker-compose_plugin: &docker-compose
+      docker-compose#v5.2.0:
+        config: .buildkite/docker-compose.yaml
+        run: node
+        tty: true
+        mount-buildkite-agent: true
+
+steps:
+  - group: "Without Buildkite Cache"
+    steps:
+      - label: ":rubygems: :rspec: Run system specs"
+        command:
+          - "bundle install"
+          - "bundle exec rspec spec/system"
+      - label: ":rubygems: :rspec: Run model specs"
+        command:
+          - "bundle install"
+          - "bundle exec rspec spec/models"
+  - group: "With Buildkite Cache"
+    steps:
+      - label: ":rubygems: Install dependencies"
+        key: "install_dependencies"
+        command: "bundle install"
+        plugins:
+          - *aws-assume-role
+          - *zstash-node
+      - label: ":rspec: Run system specs"
+        command: "bundle exec rspec spec/system"
+        depends_on:
+          - "install_dependencies"
+        plugins:
+          - *aws-assume-role
+          - *zstash-node
+      - label: ":rspec: Run model specs"
+        command: "bundle exec rspec spec/models"
+        depends_on:
+          - "install_dependencies"
+        plugins:
+          - *aws-assume-role
+          - *zstash-node

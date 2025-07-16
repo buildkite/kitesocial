@@ -1,0 +1,6 @@
+services:
+  node:
+    image: ruby:3.4
+    working_dir: /app
+    volumes:
+      - ..:/app:cached
