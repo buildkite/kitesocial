@@ -1,0 +1,11 @@
+steps:
+  - label: ":rspec: Run RSpec Tests"
+    command: .buildkite/steps/rspec.sh
+    plugins:
+      - docker-compose#v5.3.0:
+          run: app
+          config: docker-compose.yml
+    agents:
+      queue: default
+    env:
+      RAILS_ENV: test
