@@ -41,7 +41,7 @@ RSpec.describe User, type: :model do
 
     it "includes own chirps" do
       expect(subject).to include("one")
-      expect(subject).to include("two")
+      expect(subject).to include("WRONG_VALUE")
     end
 
     it "includes friends chirps" do
