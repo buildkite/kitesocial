@@ -22,7 +22,7 @@ To run Kitesocial, you will need:
 Once you've cloned the repo, run:
 
 ```
-  bin/setup --skip-server
+  bin/setup
 ```
 
 Then you'll be able to spin up your server and run your specs!
@@ -33,14 +33,14 @@ Then you'll be able to spin up your server and run your specs!
   bin/dev
 ```
 
-## Running the test suite
-
-```
-  bin/test
-```
-
 ## Running the specs
 
 ```
   bundle exec rspec
+```
+
+## Running an individual spec
+
+```
+  bundle exec rspec spec/models/chirp_spec.rb:45
 ```
