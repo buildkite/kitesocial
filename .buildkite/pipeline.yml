@@ -1,0 +1,22 @@
+steps:
+  - key: build_image
+    label: ":docker: Build Image"
+    command: |
+      docker buildx build \
+        --file Dockerfile \
+        --platform linux/amd64 \
+        --tag "$${BUILDKITE_HOSTED_REGISTRY_URL}/app:latest" \
+        --progress plain \
+        --push .
+
+  - label: ":rspec: Run RSpec Tests"
+    depends_on: build_image
+    image: "${BUILDKITE_HOSTED_REGISTRY_URL}/app:latest"
+    command: .buildkite/steps/rspec.sh
+    env:
+      RAILS_ENV: test
+
+  - label: ":rubocop: Lint"
+    depends_on: build_image
+    image: "${BUILDKITE_HOSTED_REGISTRY_URL}/app:latest"
+    command: .buildkite/steps/rubocop.sh
