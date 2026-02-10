@@ -15,8 +15,8 @@ Welcome to Kitesocial, a Twitter clone!
 
 To run Kitesocial, you will need:
 
-- Ruby 3.4.1
-- Rails 8.0.2
+- Ruby 4.0.1
+- Rails 8.1.2
 - Chrome or Chromium
 
 Once you've cloned the repo, run:
