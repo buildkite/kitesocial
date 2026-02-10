@@ -37,3 +37,6 @@ app/assets/builds
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+# Ignore installed gems
+/vendor/bundle
