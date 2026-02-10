@@ -38,3 +38,9 @@ Then you'll be able to spin up your server and run your specs!
 ```
   bundle exec rspec
 ```
+
+## Running an individual spec
+
+```
+  bundle exec rspec spec/models/chirp_spec.rb:45
+```
