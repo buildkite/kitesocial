@@ -33,12 +33,6 @@ Then you'll be able to spin up your server and run your specs!
   bin/dev
 ```
 
-## Running the test suite
-
-```
-  bin/test
-```
-
 ## Running the specs
 
 ```
