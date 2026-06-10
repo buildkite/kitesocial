@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2020_03_06_042431) do
+ActiveRecord::Schema[8.1].define(version: 2020_03_06_042431) do
   create_table "chirps", force: :cascade do |t|
     t.integer "author_id", null: false
     t.text "content"
@@ -26,19 +26,19 @@ ActiveRecord::Schema[8.0].define(version: 2020_03_06_042431) do
   end
 
   create_table "follows", force: :cascade do |t|
+    t.datetime "created_at", null: false
     t.integer "follower_id", null: false
     t.integer "friend_id", null: false
-    t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["follower_id"], name: "index_follows_on_follower_id"
     t.index ["friend_id"], name: "index_follows_on_friend_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "password_digest"
     t.datetime "created_at", null: false
+    t.string "email"
+    t.string "name"
+    t.string "password_digest"
     t.datetime "updated_at", null: false
   end
 
